@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="95">
+  <logicalFolder name="root" displayName="root" projectFiles="true" kind="ROOT">
+    <df root="." name="0">
+      <df name="doxygen">
+        <df name="html">
+          <df name="search">
+          </df>
+        </df>
+        <df name="latex">
+        </df>
+      </df>
+      <df name="include">
+        <df name="Reflexxes">
+          <in>RMLFlags.h</in>
+          <in>RMLInputParameters.h</in>
+          <in>RMLOutputParameters.h</in>
+          <in>RMLPositionFlags.h</in>
+          <in>RMLPositionInputParameters.h</in>
+          <in>RMLPositionOutputParameters.h</in>
+          <in>RMLVector.h</in>
+          <in>RMLVelocityFlags.h</in>
+          <in>RMLVelocityInputParameters.h</in>
+          <in>RMLVelocityOutputParameters.h</in>
+          <in>ReflexxesAPI.h</in>
+          <in>TypeIIRMLDecisionTree1A.h</in>
+          <in>TypeIIRMLDecisionTree1B.h</in>
+          <in>TypeIIRMLDecisionTree1C.h</in>
+          <in>TypeIIRMLDecisionTree2.h</in>
+          <in>TypeIIRMLDecisions.h</in>
+          <in>TypeIIRMLMath.h</in>
+          <in>TypeIIRMLPolynomial.h</in>
+          <in>TypeIIRMLPosition.h</in>
+          <in>TypeIIRMLQuicksort.h</in>
+          <in>TypeIIRMLStep1IntermediateProfiles.h</in>
+          <in>TypeIIRMLStep1Profiles.h</in>
+          <in>TypeIIRMLStep2IntermediateProfiles.h</in>
+          <in>TypeIIRMLStep2Profiles.h</in>
+          <in>TypeIIRMLStep2WithoutSynchronization.h</in>
+          <in>TypeIIRMLVelocity.h</in>
+        </df>
+        <in>ComauGazeboPlugin.h</in>
+        <in>NoGazebo.h</in>
+        <in>RobotMovementComauLib.h</in>
+        <in>RobotMovementInterface.h</in>
+        <in>RobotMovementPID.h</in>
+        <in>TCPServer.h</in>
+        <in>eORL.h</in>
+      </df>
+      <df name="launch">
+      </df>
+      <df name="msg">
+        <in>endEffectorPosition.msg</in>
+      </df>
+      <df name="src">
+        <in>ComauGazeboPlugin.cpp</in>
+        <in>NoGazebo.cpp</in>
+        <in>RobotMovementComauLib.cpp</in>
+        <in>RobotMovementPID.cpp</in>
+        <in>TCPServer.cpp</in>
+      </df>
+    </df>
+  </logicalFolder>
+  <projectmakefile>Makefile</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <platform>2</platform>
+      </toolsSet>
+      <compile>
+        <compiledirpicklist>
+          <compiledirpicklistitem>.</compiledirpicklistitem>
+          <compiledirpicklistitem>${AUTO_FOLDER}</compiledirpicklistitem>
+        </compiledirpicklist>
+        <compiledir>${AUTO_FOLDER}</compiledir>
+        <compilecommandpicklist>
+          <compilecommandpicklistitem>${MAKE} ${ITEM_NAME}.o</compilecommandpicklistitem>
+          <compilecommandpicklistitem>${AUTO_COMPILE}</compilecommandpicklistitem>
+        </compilecommandpicklist>
+        <compilecommand>${AUTO_COMPILE}</compilecommand>
+      </compile>
+      <dbx_gdbdebugger version="1">
+        <gdb_pathmaps>
+        </gdb_pathmaps>
+        <gdb_interceptlist>
+          <gdbinterceptoptions gdb_all="false" gdb_unhandled="true" gdb_unexpected="true"/>
+        </gdb_interceptlist>
+        <gdb_options>
+          <DebugOptions>
+          </DebugOptions>
+        </gdb_options>
+        <gdb_buildfirst gdb_buildfirst_overriden="false" gdb_buildfirst_old="false"/>
+      </dbx_gdbdebugger>
+      <nativedebugger version="1">
+        <engine>gdb</engine>
+      </nativedebugger>
+      <runprofile version="9">
+        <runcommandpicklist>
+          <runcommandpicklistitem>"${OUTPUT_PATH}"</runcommandpicklistitem>
+        </runcommandpicklist>
+        <runcommand>"${OUTPUT_PATH}"</runcommand>
+        <rundir>.</rundir>
+        <buildfirst>false</buildfirst>
+        <terminal-type>0</terminal-type>
+        <remove-instrumentation>0</remove-instrumentation>
+        <environment>
+        </environment>
+      </runprofile>
+    </conf>
+  </confs>
+</configurationDescriptor>

@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+
+<launch>
+    
+    <param name="robot_description" textfile="$(find smart5six_description)/robot/comau.urdf"/> 
+    <arg name="gui" default="true" />
+    <param name="use_gui" value="$(arg gui)"/>
+
+    <include file="$(find gazebo_ros)/launch/empty_world.launch">
+        <arg name="world_name" value="$(find smart5six_gazebo_plugin)/comau.world"/>
+        <arg name="gui" default="true" />
+        <arg name="use_sim_time" value="true"/>
+    </include>
+    <node name="spawn_comau" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -x 0 -y 0 -z 0 -model comau_smart5Six" respawn="false" output="screen"/> 
+
+    <!-- start robot state publisher -->
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher" output="screen"/>
+	
+    <!-- start joint state publisher -->
+    <node pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher" output="screen"/>
+ 
+    <!-- start TCP Server -->
+    <param name="modality" type="str" value="jointsRemapping"/>   <!-- inverseKinematics / jointsRemapping -->
+    <node pkg="smart5six_gazebo_plugin" type="tcp_server" name="tcp_server" output="screen"/>
+
+    
+    <!-- start ROS Industrial node and params-->
+    <arg name="robot_ip" value="127.0.0.1"/>
+    <param name="robot_ip_address" type="str" value="$(arg robot_ip)"/>
+ 
+    <!-- default ROS Industrial nodes -->
+    <!-- <node pkg="industrial_robot_client" name="robot_state" type="robot_state" output="screen" /> -->
+    <!--<node pkg="industrial_robot_client" name="motion_streaming_interface" type="motion_streaming_interface" output="screen" />-->
+    
+</launch>
